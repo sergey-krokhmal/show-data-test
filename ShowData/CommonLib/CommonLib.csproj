@@ -35,6 +35,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\Data\DataRecord.cs" />
+    <Compile Include="Contracts\Data\DataServiceFault.cs" />
     <Compile Include="Contracts\Data\GetRecordsRequest.cs" />
+    <Compile Include="Contracts\Data\Response.cs" />
     <Compile Include="Contracts\Service\IDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

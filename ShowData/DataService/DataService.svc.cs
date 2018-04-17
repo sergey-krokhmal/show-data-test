@@ -17,7 +17,7 @@ namespace DataService
         /// </summary>
         /// <param name="request">Request with date range</param>
         /// <returns>List of data records</returns>
-        public List<DataRecord> GetDataRecords(DataRecordsRequest request)
+        public Response<List<DataRecord>> GetDataRecords(DataRecordsRequest request)
         {
             return null;
         }

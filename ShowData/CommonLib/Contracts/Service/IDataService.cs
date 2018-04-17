@@ -18,6 +18,7 @@ namespace CommonLib.Contracts.Service
         /// <param name="request">Request with date range</param>
         /// <returns>List of data records</returns>
         [OperationContract]
-        List<DataRecord> GetDataRecords(DataRecordsRequest request);
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Wrapped)]
+        Response<List<DataRecord>> GetDataRecords(DataRecordsRequest request);
     }
 }
