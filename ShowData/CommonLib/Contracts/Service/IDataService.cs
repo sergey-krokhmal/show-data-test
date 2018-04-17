@@ -1,42 +1,23 @@
-﻿using System.Runtime.Serialization;
+﻿using CommonLib.Contracts.Data;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 
 namespace CommonLib.Contracts.Service
 {
+    /// <summary>
+    /// Data service contract
+    /// </summary>
     [ServiceContract]
     public interface IDataService
     {
-
+        /// <summary>
+        /// Get data records
+        /// </summary>
+        /// <param name="request">Request with date range</param>
+        /// <returns>List of data records</returns>
         [OperationContract]
-        string GetData(int value);
-
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Добавьте здесь операции служб
-    }
-
-
-    // Используйте контракт данных, как показано в примере ниже, чтобы добавить составные типы к операциям служб.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        List<DataRecord> GetDataRecords(DataRecordsRequest request);
     }
 }

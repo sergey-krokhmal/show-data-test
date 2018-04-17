@@ -1,26 +1,25 @@
-﻿using CommonLib.Contracts.Service;
+﻿using CommonLib.Contracts.Data;
+using CommonLib.Contracts.Service;
 using System;
+using System.Collections.Generic;
+using System.ServiceModel;
 
 namespace DataService
 {
+    /// <summary>
+    /// Data service
+    /// </summary>
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Multiple, AddressFilterMode = AddressFilterMode.Any)]
     public class DataService : IDataService
     {
-        public string GetData(int value)
+        /// <summary>
+        /// Get data records
+        /// </summary>
+        /// <param name="request">Request with date range</param>
+        /// <returns>List of data records</returns>
+        public List<DataRecord> GetDataRecords(DataRecordsRequest request)
         {
-            return string.Format("You entered: {0}", value);
-        }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return null;
         }
     }
 }
