@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace CommonLib.Contracts.Data
         /// Result code
         /// </summary>
         [DataMember(Name = "cd", Order = 2)]
-        public uint Code { get; set; }
+        public HttpStatusCode Code { get; set; }
 
         /// <summary>
         /// Error message
@@ -41,6 +42,7 @@ namespace CommonLib.Contracts.Data
         public Response()
         {
             Success = true;
+            Code = HttpStatusCode.OK;
             Error = string.Empty;
         }
 
@@ -48,10 +50,11 @@ namespace CommonLib.Contracts.Data
         {
             Value = val;
             Success = true;
+            Code = HttpStatusCode.OK;
             Error = string.Empty;
         }
 
-        public Response(string error, uint code)
+        public Response(string error, HttpStatusCode code = HttpStatusCode.InternalServerError)
         {
             Code = code;
             Error = error;
