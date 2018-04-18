@@ -12,6 +12,6 @@ namespace CommonLib.DataAccess
     /// </summary>
     public interface IDataAccessible
     {
-        IList<DataRecord> GetDataRecords(DateTime dateFrom, DateTime to);
+        IList<DataRecord> GetDataRecords(DateTime dateFrom, DateTime dateTo);
     }
 }
