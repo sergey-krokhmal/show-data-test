@@ -25,7 +25,7 @@ namespace CommonLib.Contracts.Data
         /// Result code
         /// </summary>
         [DataMember(Name = "cd", Order = 2)]
-        public HttpStatusCode Code { get; set; }
+        public int Code { get; set; }
 
         /// <summary>
         /// Error message
@@ -42,7 +42,6 @@ namespace CommonLib.Contracts.Data
         public Response()
         {
             Success = true;
-            Code = HttpStatusCode.OK;
             Error = string.Empty;
         }
 
@@ -50,11 +49,10 @@ namespace CommonLib.Contracts.Data
         {
             Value = val;
             Success = true;
-            Code = HttpStatusCode.OK;
             Error = string.Empty;
         }
 
-        public Response(string error, HttpStatusCode code = HttpStatusCode.InternalServerError)
+        public Response(string error, int code)
         {
             Code = code;
             Error = error;
