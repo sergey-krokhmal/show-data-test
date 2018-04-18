@@ -26,17 +26,21 @@ namespace CommonLib.Contracts.Data
         /// Parse request's string fields to DateTime
         /// </summary>
         /// <returns>DateTime range (from/to)</returns>
-        public (DateTime dateFrom, DateTime dateTo) ToDateTimes()
+        // Here better use C# 7 Tuples, but my OS...(
+        public ValueTuple<DateTime, DateTime> ToDateTimes()
         {
-            if (!DateTime.TryParse(DateFrom, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal, out var dateFrom))
+            string dateTimeFormat = "dd.MM.yyyy";
+            DateTime dateFrom;
+            if (!DateTime.TryParseExact(DateFrom, dateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out dateFrom))
             {
-                throw new FormatException("Wrong 'from' date format (needs dd.mm.yyyy)");
+                throw new FormatException($"Wrong 'from' date format (needs {dateTimeFormat})");
             }
-            if (!DateTime.TryParse(DateTo, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal, out var dateto))
+            DateTime dateTo;
+            if (!DateTime.TryParseExact(DateTo, dateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out dateTo))
             {
-                throw new FormatException("Wrong 'to' date format (needs dd.mm.yyyy)");
+                throw new FormatException($"Wrong 'to' date format (needs {dateTimeFormat})");
             }
-            return (dateFrom, dateto);
+            return ValueTuple.Create(dateFrom.ToUniversalTime(), dateTo.ToUniversalTime());
         }
     }
 }
