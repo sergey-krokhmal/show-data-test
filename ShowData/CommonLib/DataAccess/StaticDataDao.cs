@@ -36,6 +36,17 @@ namespace CommonLib.DataAccess
         /// <returns>List interface of data records</returns>
         public IList<DataRecord> GetDataRecords(DateTime dateFrom, DateTime dateTo)
         {
+            var dataRecords = new List<DataRecord>();
+            var allDataRecords = GetAllDataRecords();
+            if (allDataRecords != null)
+            {
+                dataRecords = allDataRecords.Where(dr => dr.Date >= dateFrom && dr.Date <= dateTo).ToList();
+            }
+            return dataRecords;
+        }
+
+        public IList<DataRecord> GetAllDataRecords()
+        {
             return new List<DataRecord>
             {
                 new DataRecord
