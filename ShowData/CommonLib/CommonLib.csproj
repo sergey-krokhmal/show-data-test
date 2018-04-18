@@ -55,6 +55,7 @@
     <Compile Include="Contracts\Service\IDataService.cs" />
     <Compile Include="DataAccess\IDataAccessible.cs" />
     <Compile Include="DataAccess\StaticDataDao.cs" />
+    <Compile Include="DataService\DataServiceException.cs" />
     <Compile Include="DataService\Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
