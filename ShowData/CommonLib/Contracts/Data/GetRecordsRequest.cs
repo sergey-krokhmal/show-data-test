@@ -26,7 +26,7 @@ namespace CommonLib.Contracts.Data
         /// Parse request's string fields to DateTime
         /// </summary>
         /// <returns>DateTime range (from/to)</returns>
-        // Here better use C# 7 Tuples, but my OS...(
+        // Here better use C# 7 ValueTuples, but my OS...(
         public ValueTuple<DateTime, DateTime> ToDateTimes()
         {
             string dateTimeFormat = DataRecord.DateFormat;

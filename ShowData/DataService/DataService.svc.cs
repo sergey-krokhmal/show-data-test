@@ -15,10 +15,17 @@ namespace DataService
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Multiple, AddressFilterMode = AddressFilterMode.Any)]
     public class DataService : IDataService
     {
+        /// <summary>
+        /// Dao instance
+        /// </summary>
         private IDataAccessible dao;
 
+        /// <summary>
+        /// Construct service
+        /// </summary>
         public DataService()
         {
+            // Get dao instance
             dao = StaticDataDao.Get;
         }
 
