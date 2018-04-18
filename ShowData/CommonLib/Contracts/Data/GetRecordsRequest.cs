@@ -29,7 +29,7 @@ namespace CommonLib.Contracts.Data
         // Here better use C# 7 Tuples, but my OS...(
         public ValueTuple<DateTime, DateTime> ToDateTimes()
         {
-            string dateTimeFormat = "dd.MM.yyyy";
+            string dateTimeFormat = DataRecord.DateFormat;
             DateTime dateFrom;
             if (!DateTime.TryParseExact(DateFrom, dateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out dateFrom))
             {
