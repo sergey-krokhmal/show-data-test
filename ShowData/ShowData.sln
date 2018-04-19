@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService", "DataService\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLib", "CommonLib\CommonLib.csproj", "{29FDD13D-7B5C-452F-A404-FA3E23B7D97E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFront", "DataFront\DataFront.csproj", "{3EFC17E5-790C-4A94-93B9-90B1D575B47B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFront", "DataFront\DataFront.csproj", "{19FC5F6C-7291-4192-80D2-44196CB48B32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{29FDD13D-7B5C-452F-A404-FA3E23B7D97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29FDD13D-7B5C-452F-A404-FA3E23B7D97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29FDD13D-7B5C-452F-A404-FA3E23B7D97E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3EFC17E5-790C-4A94-93B9-90B1D575B47B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3EFC17E5-790C-4A94-93B9-90B1D575B47B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3EFC17E5-790C-4A94-93B9-90B1D575B47B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3EFC17E5-790C-4A94-93B9-90B1D575B47B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19FC5F6C-7291-4192-80D2-44196CB48B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19FC5F6C-7291-4192-80D2-44196CB48B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19FC5F6C-7291-4192-80D2-44196CB48B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19FC5F6C-7291-4192-80D2-44196CB48B32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
