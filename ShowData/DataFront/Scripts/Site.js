@@ -19,7 +19,8 @@ function showData()
 
     var query = $('.get-data-form').serialize();
     $.ajax({
-        url: 'http://localhost:25136/' + query,
+        url: 'http://localhost:25136/DataService.svc/GetDataRecords',
+        data: { "from": "15.04.2018 00:00:00", "to":"20.04.2018 00:00:00"},
         success: function (data) { console.log(data)},
         dataType: 'json'
     });
