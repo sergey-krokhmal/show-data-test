@@ -27,7 +27,7 @@ namespace CommonLib.Contracts.Data
         /// </summary>
         /// <returns>DateTime range (from/to)</returns>
         // Here better use C# 7 ValueTuples, but my OS...(
-        public ValueTuple<DateTime, DateTime> ToDateTimes()
+        public (DateTime, DateTime) ToDateTimes()
         {
             string dateTimeFormat = DataRecord.DateFormat;
             DateTime dateFrom;
@@ -40,7 +40,7 @@ namespace CommonLib.Contracts.Data
             {
                 throw new FormatException($"Wrong 'to' date format (needs {dateTimeFormat})");
             }
-            return ValueTuple.Create(dateFrom.ToUniversalTime(), dateTo.ToUniversalTime());
+            return (dateFrom.ToUniversalTime(), dateTo.ToUniversalTime());
         }
     }
 }

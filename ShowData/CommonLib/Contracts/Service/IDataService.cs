@@ -18,7 +18,7 @@ namespace CommonLib.Contracts.Service
         /// <param name="request">Request with date range</param>
         /// <returns>List of data records</returns>
         [OperationContract]
-        [WebGet]
+        [WebGet(BodyStyle = WebMessageBodyStyle.WrappedRequest, RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Response<List<DataRecord>> GetDataRecords(DataRecordsRequest request);
     }
 }
