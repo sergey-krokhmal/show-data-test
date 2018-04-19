@@ -18,7 +18,7 @@ namespace CommonLib.Contracts.Service
         /// <param name="request">Request with date range</param>
         /// <returns>List of data records</returns>
         [OperationContract]
-        [WebInvoke]
+        [WebGet]
         Response<List<DataRecord>> GetDataRecords(DataRecordsRequest request);
     }
 }
