@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLib.Extensions;
+using System;
 using System.Globalization;
 using System.Runtime.Serialization;
 
@@ -29,7 +30,7 @@ namespace CommonLib.Contracts.Data
         // Here better use C# 7 ValueTuples, but my OS...(
         public (DateTime, DateTime) ToDateTimes()
         {
-            string dateTimeFormat = DataRecord.DateFormat;
+            string dateTimeFormat = DateTimeExtension.DateFormat;
             DateTime dateFrom;
             if (!DateTime.TryParseExact(DateFrom, dateTimeFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out dateFrom))
             {

@@ -24,6 +24,10 @@ namespace DataFront
                       "~/Scripts/respond.js",
                       "~/Scripts/bootstrap-formhelpers.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/assets").Include(
+                      "~/Scripts/moment.min.js",
+                      "~/Scripts/jquery.cookie-1.4.1.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/site").Include(
                       "~/Scripts/Site.js"));
 

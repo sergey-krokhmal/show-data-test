@@ -2,6 +2,7 @@
 using CommonLib.Contracts.Service;
 using CommonLib.DataAccess;
 using CommonLib.DataService;
+using CommonLib.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,27 +33,23 @@ namespace DataService
         /// <summary>
         /// Get data records
         /// </summary>
-        /// <param name="request">Request with date range</param>
         /// <returns>List of data records</returns>
-        public Response<List<DataRecord>> GetDataRecords(DataRecordsRequest request)
+        public Response<List<DataRecord>> GetDataRecords(string from, string to)
         {
             try
             {
-                // If request empty
-                if (request == null)
-                {
-                    throw new DataServiceException("Empty request params", (int)DataServiceResultCode.EmptyParams);
-                }
                 // If request params empty
-                if (string.IsNullOrWhiteSpace(request.DateFrom) || string.IsNullOrWhiteSpace(request.DateTo))
+                if (string.IsNullOrWhiteSpace(from) || string.IsNullOrWhiteSpace(to))
                 {
                     throw new DataServiceException("One of request's date param is empty", (int)DataServiceResultCode.EmptyParams);
                 }
+
                 // Get DateTimes range
-                var dateRange = request.ToDateTimes();
+                var dateFrom = from.ToUtcDateTime();
+                var dateTo = to.ToUtcDateTime();
 
                 // Get data records from data access object
-                var dataRecords = dao.GetDataRecords(dateRange.Item1, dateRange.Item2);
+                var dataRecords = dao.GetDataRecords(dateFrom, dateTo);
 
                 // Return dataRecords
                 return new Response<List<DataRecord>>(dataRecords.ToList());

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLib.Extensions;
+using System;
 using System.Globalization;
 using System.Runtime.Serialization;
 
@@ -10,12 +11,6 @@ namespace CommonLib.Contracts.Data
     [DataContract]
     public class DataRecord
     {
-        /// <summary>
-        /// Data record format
-        /// </summary>
-        [IgnoreDataMember]
-        public static string DateFormat { get { return "dd.MM.yyyy"; } }
-
         /// <summary>
         /// Record's id
         /// </summary>
@@ -36,13 +31,11 @@ namespace CommonLib.Contracts.Data
         {
             get
             {
-                return Date.ToString(DateFormat);
+                return Date.ToString(DateTimeExtension.DateFormat);
             }
             set
             {
-                DateTime date;
-                DateTime.TryParseExact(value, DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out date);
-                Date = date.ToUniversalTime();
+                Date = value.ToUtcDateTime();
             }
         }
 
