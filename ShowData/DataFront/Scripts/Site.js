@@ -104,7 +104,7 @@ function makeHtmlDataTable(dataArray) {
         var row =
             '<tr>' +
                 '<td class="id">' + dataArray[i].id + '</td>' +
-            '<td class="date">' + dtFormated + '</td>' +
+                '<td class="date">' + dtFormated + '</td>' +
                 '<td class="text">' + dataArray[i].txt + '</td>' +
             '</tr>';
         table += row;
