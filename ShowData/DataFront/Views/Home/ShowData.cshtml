@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Show Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts {
+    <script src="~/Scripts/Site.js"></script>
+}
+    <div class="jambotron">
+        <h2>Show Data</h2>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Enter params and press 'Show'</div>
+            <div class="panel-body">
+                <form class="form-horizontal get-data-form">
+                    <div class="form-group">
+                        <label for="inputColorpicker1" class="col-sm-2 control-label">Color</label>
+                        <div class="col-sm-10">
+                            <input id="inputColorpicker1" class="form-control form-color-picker" type="color" value="#000000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="fontSelect1" class="col-sm-2 control-label">Font</label>
+                        <div class="col-sm-10">
+                            <div id="fontSelect1" class="bfh-selectbox bfh-fonts" data-font="Arial" data-available="Arial,Arial Black,Calibri,Courier New,Impact,Helvetica,Tahoma,Verdana"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateFromPicker1" class="col-sm-2 control-label">Date from</label>
+                        <div class="col-sm-10">
+                            <div id="dateFromPicker1" class="bfh-datepicker" data-format="d.m.y" data-date="today" data-name="from"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateToPicker1" class="col-sm-2 control-label">Date to</label>
+                        <div class="col-sm-10">
+                            <div id="dateToPicker1" class="bfh-datepicker" data-format="d.m.y" data-date="today" data-name="to"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="button" class="btn btn-default" onclick="showData()">Show</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-info hide table-panel">
+            <div class="panel-heading">Data table</div>
+            <div class="panel-body">
+                <span class="no-data-mark">No data</span>
+                <div class="table-container"></div>
+            </div>
+        </div>
+    </div>
