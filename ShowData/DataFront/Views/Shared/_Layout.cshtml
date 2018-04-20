@@ -33,7 +33,25 @@
             <p>&copy; @DateTime.Now.Year – Show data app</p>
         </footer>
     </div>
-
+    <div class="modal fade bd-example-modal-sm error-modal" tabindex="-1" role="alert" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Error</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="alert alert-danger" role="alert">
+                        <span class="error-code"></span>:&nbsp;
+                        <span class="error-message"></span>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/assets")
