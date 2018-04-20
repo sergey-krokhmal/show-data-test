@@ -24,10 +24,10 @@ namespace DataService
         /// <summary>
         /// Construct service
         /// </summary>
-        public DataService()
+        public DataService(IDataAccessible dao)
         {
             // Get dao instance
-            dao = StaticDataDao.Get;
+            this.dao = dao;
         }
 
         /// <summary>
